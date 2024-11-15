@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); /*learnt this and wanted to see if works*/
 
 body {
-  background-color: #202988c4;
-  font-family: "Candal", sans-serif;
+  background-color: #033549e0;
+  font-family: "Lobster", sans-serif;
   font-weight: 300;
   font-style: inherit;
   margin: 0;
@@ -10,19 +10,48 @@ body {
   display: flex;
   justify-content: center;
 }
-/*--------------------------------------------*/
+h1 {
+  background-color: rgb(4, 47, 139);
+  font-size: 50px;
+  text-align: center;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 20px;
+}
+h2 {
+  background-color: rgb(6, 77, 99);
+  text-align: center;
+  font-size: 40px;
+  font-weight: 400;
+  font-style: oblique;
+  margin-bottom: 20px;
+}
+h3 {
+  background-color: rgb(142, 4, 235);
+  font-style: inherit;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+/*------------------ Header Section --------------------------*/
 header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 15px 20px;
   background-color: #333;
   color: #fff;
+  padding-inline: 20px;
 }
 
 .navbar {
   display: flex;
-  align-items: center;
   gap: 20px;
+}
+.navbar a{
+  color: cyan;
+  text-decoration: solid;
+  padding: 10px 20px;
 }
 
 nav ul {
@@ -31,7 +60,14 @@ nav ul {
   gap: 15px;
 }
 
-nav a {
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.nav-links a {
   color: #fff;
   text-decoration: none;
   padding: 8px 12px;
@@ -39,38 +75,35 @@ nav a {
   transition: background-color 0.3s;
 }
 
-nav a:hover {
-  background-color: #555;
+.nav-links a:hover {
+  background-color: #5ffa06;
 }
 
-.social-links a {
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icon {
   color: #fff;
-  text-decoration: none;
-  margin-left: 10px;
-  font-size: 0.9em;
+  font-size: 1.2em;
   transition: color 0.3s;
 }
 
-.social-links a:hover {
-  color: #ffd700;
+.social-icon:hover {
+  color: #ffd700; 
 }
 
-/* Responsive layout for smaller screens */
-@media (max-width: 768px) {
-  header {
-      flex-direction: column;
-      align-items: flex-end;
-  }
-  .navbar {
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 10px;
-  }
-  nav ul {
-      gap: 10px;
-  }
+
+/*----------------About us----------------------------*/
+#about-us{
+  text-align: centre;
+  width: 80%;
+  margin: 20px auto;
+  padding: 0px;
 }
-/*--------------------------------------------*/
+/*----------------Available Pets----------------------------*/
 #available-pets {
   text-align: center;
   width: 80%;
@@ -162,10 +195,7 @@ nav a:hover {
   margin: 20px auto;
 }
 
-h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
+
 
 .service-slideshow {
   position: relative;
@@ -210,15 +240,13 @@ h2 {
   opacity: 1;
 }
 
-/* Keyframes for automatic slide animation */
+/* ---Wanted to test if i understood animation------ */
 @keyframes slideshow {
   0% { opacity: 1; }
   33% { opacity: 0; }
   66% { opacity: 0; }
   100% { opacity: 1; }
 }
-
-/* Apply animation to each slide with delay */
 .service-slide:nth-child(1) {
   animation: slideshow 9s infinite;
 }
@@ -229,4 +257,178 @@ h2 {
 
 .service-slide:nth-child(3) {
   animation: slideshow 9s infinite 6s;
+}
+
+/*----------------Available Supplies----------------------------*/
+.slideshow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px; 
+  padding: 20px;
+}
+
+.supply-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.supply-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.supply-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1em;
+}
+
+.supply-card .price {
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 1em;
+}
+/*---------------------Sections------------------------------------*/
+#services,
+#contact-us,
+#find-us{
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+}
+/*-------------------------Tables------------------------------*/
+#services {
+  text-align: center;
+  font-weight: 400;
+}
+
+#services table {
+  width: 50%;
+  margin: auto;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+}
+
+#services th, #services td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+#services th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+#services tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#services tr:hover {
+  background-color: #f1f1f1;
+}
+
+/*-------------------------Contact us------------------------------*/
+#contact-us {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  font-family: "Lobster", sans-serif;
+}
+
+#contact-us h1 {
+  font-size: 20px;
+  color: #333;
+}
+
+#contact-us p {
+  font-size: 10px;
+  color: #555;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+label {
+  font-size: 25px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 500%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/*----------------------------------Footer------------------------------------*/
+footer {
+  background-color: #a607ce;
+  color: #fff;
+  text-align: center;
+  padding: 15px 20px;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-links li {
+  display: inline;
+}
+
+.footer-links a {
+  color: #1fc9f3; 
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
 }

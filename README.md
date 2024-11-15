@@ -14,3 +14,13 @@ First week in SD class project to test my understanding on html,css and js
 
 
 With this the final product looks like this
+
+* The Home page looks like this 
+![Alt text](./images/Final/home.png)
+* The links of images
+![Alt text](./images/Final/pets.png)
+![Alt text](./images/Final/links.png)
+* the form and table
+![Alt text](./images/Final/table%20and%20form.png)
+* The footer
+![Alt text](./images/Final/footer.png)
