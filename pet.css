@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
+
+body {
+  background-color: #202988c4;
+  font-family: "Candal", sans-serif;
+  font-weight: 300;
+  font-style: inherit;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+/*--------------------------------------------*/
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 0.9em;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ffd700;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: flex-end;
+  }
+  .navbar {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+  }
+  nav ul {
+      gap: 10px;
+  }
+}
+/*--------------------------------------------*/
+#available-pets {
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+}
+#available-supplies {
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+}
+.slideshow {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.pet-card {
+  position: relative;
+  width: 30%;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.pet-card img {
+  width: 100%;
+  display: block;
+}
+
+.pet-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.pet-card:hover .overlay {
+  opacity: 1;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#home-services {
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.service-slideshow {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.service-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.service-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.service-slide .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.service-slide:hover .overlay {
+  opacity: 1;
+}
+
+.service-slide.active {
+  opacity: 1;
+}
+
+/* Keyframes for automatic slide animation */
+@keyframes slideshow {
+  0% { opacity: 1; }
+  33% { opacity: 0; }
+  66% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Apply animation to each slide with delay */
+.service-slide:nth-child(1) {
+  animation: slideshow 9s infinite;
+}
+
+.service-slide:nth-child(2) {
+  animation: slideshow 9s infinite 3s;
+}
+
+.service-slide:nth-child(3) {
+  animation: slideshow 9s infinite 6s;
+}
